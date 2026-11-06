@@ -6,63 +6,7 @@
     <title>K.A. RENAISSANCE | Software & Automation</title>
     <style>
         * {
-            margin: 0;/* Ajuste para la barra de navegación superior en móviles */
-header nav, .nav-container, .top-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;/* Ajuste para la barra de navegación superior en móviles */
-header nav, .nav-container, .top-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px; /* Espaciado uniforme entre botones */
-  padding: 10px 15px;
-}
-
-/* Estilo para que los botones de navegación no se salgan del margen */
-header nav a, .nav-link {
-  font-size: 0.85rem; /* Ligeramente más compacto en móviles */
-  padding: 6px 12px;
-  white-space: nowrap; /* Evita que el texto de un botón se rompa a la mitad */
-}
-
-/* Opcional: Si prefieres que el menú superior tenga desplazamiento horizontal fluido */
-.mobile-scroll-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding-bottom: 5px;
-  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
-}
-
-.mobile-scroll-nav::-webkit-scrollbar {
-  display: none; /* Oculta la barra de scroll en Chrome/Safari */
-}
-  align-items: center;
-  gap: 12px; /* Espaciado uniforme entre botones */
-  padding: 10px 15px;
-}
-
-/* Estilo para que los botones de navegación no se salgan del margen */
-header nav a, .nav-link {
-  font-size: 0.85rem; /* Ligeramente más compacto en móviles */
-  padding: 6px 12px;
-  white-space: nowrap; /* Evita que el texto de un botón se rompa a la mitad */
-}
-
-/* Opcional: Si prefieres que el menú superior tenga desplazamiento horizontal fluido */
-.mobile-scroll-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding-bottom: 5px;
-  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
-}
-
-.mobile-scroll-nav::-webkit-scrollbar {
-  display: none; /* Oculta la barra de scroll en Chrome/Safari */
-}
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -105,6 +49,7 @@ header nav a, .nav-link {
             backdrop-filter: blur(12px);
             z-index: 100;
             border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            flex-wrap: wrap;
         }
 
         .nav-logo {
@@ -118,6 +63,7 @@ header nav a, .nav-link {
             display: flex;
             gap: 30px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -142,13 +88,15 @@ header nav a, .nav-link {
         .hero {
             position: relative;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             text-align: center;
             z-index: 3;
+            padding-top: 100px;
+            padding-bottom: 40px;
         }
 
         .hero-content {
@@ -340,6 +288,65 @@ header nav a, .nav-link {
             color: #888;
             background: rgba(5, 6, 8, 0.95);
         }
+
+        /* --- RESPONSIVE MOBILE ADAPTATIONS --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 15px;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav-logo {
+                width: 100%;
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+
+            .btn-usdt {
+                padding: 4px 10px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .shield-logo {
+                width: 140px;
+            }
+
+            .section {
+                padding: 40px 20px;
+                margin: 20px 10px;
+            }
+
+            .product-card {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .specs-list {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -358,8 +365,7 @@ header nav a, .nav-link {
     <section class="hero">
         <div class="hero-content">
             <div class="shield-logo-wrapper" id="logoContainer">
-                <!-- RUTA DIRECTA A LA RAÍZ BLINDADA -->
-                <img src="kar_shield.png" alt="K.A. Renaissance Shield" class="shield-logo" id="mainShield">
+                <img src="01_assets/kar_shield.png" alt="K.A. Renaissance Shield" class="shield-logo" id="mainShield">
             </div>
             <h1 class="hero-title">K.A. RENAISSANCE</h1>
             <p class="hero-subtitle">Proprietary Software Engineering & Automation Engines</p>
@@ -481,4 +487,4 @@ header nav a, .nav-link {
         setInterval(drawBinary, 50);
     </script>
 </body>
-    </html>
+</html>
