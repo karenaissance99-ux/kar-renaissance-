@@ -94,7 +94,7 @@
             flex-direction: column;
             text-align: center;
             z-index: 3;
-            padding-top: 100px;
+            padding-top: 120px;
             padding-bottom: 40px;
         }
 
@@ -103,32 +103,6 @@
             z-index: 4;
             max-width: 850px;
             padding: 0 20px;
-        }
-
-        .shield-logo-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .shield-logo {
-            width: 190px;
-            height: auto;
-            margin-bottom: 25px;
-            mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
-            animation: shieldEmergence 1.5s ease-out forwards, floatShield 4s ease-in-out infinite 1.5s;
-            pointer-events: none;
-        }
-
-        @keyframes shieldEmergence {
-            0% { opacity: 0; transform: scale(0.6) translateY(30px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes floatShield {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
         }
 
         .hero-title {
@@ -321,16 +295,12 @@
             }
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 letter-spacing: 2px;
             }
 
             .hero-subtitle {
                 font-size: 0.95rem;
-            }
-
-            .shield-logo {
-                width: 140px;
             }
 
             .section {
@@ -366,9 +336,6 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="shield-logo-wrapper" id="logoContainer">
-                <img src="01_assets/kar_shield.png" alt="K.A. Renaissance Shield" class="shield-logo" id="mainShield">
-            </div>
             <h1 class="hero-title">K.A. RENAISSANCE</h1>
             <p class="hero-subtitle">Proprietary Software Engineering & Automation Engines</p>
             <a href="#software" class="btn-main">Explore Solutions</a>
