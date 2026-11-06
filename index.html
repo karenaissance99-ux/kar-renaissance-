@@ -10,7 +10,35 @@
 header nav, .nav-container, .top-menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;/* Ajuste para la barra de navegación superior en móviles */
+header nav, .nav-container, .top-menu {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 12px; /* Espaciado uniforme entre botones */
+  padding: 10px 15px;
+}
+
+/* Estilo para que los botones de navegación no se salgan del margen */
+header nav a, .nav-link {
+  font-size: 0.85rem; /* Ligeramente más compacto en móviles */
+  padding: 6px 12px;
+  white-space: nowrap; /* Evita que el texto de un botón se rompa a la mitad */
+}
+
+/* Opcional: Si prefieres que el menú superior tenga desplazamiento horizontal fluido */
+.mobile-scroll-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 5px;
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+
+.mobile-scroll-nav::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll en Chrome/Safari */
+}
   align-items: center;
   gap: 12px; /* Espaciado uniforme entre botones */
   padding: 10px 15px;
