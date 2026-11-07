@@ -385,11 +385,17 @@ async function processWeb3Payment() {
             status.innerText = "Pago cancelado o error en la red.";
         }
     } else {
-        // En lugar de una ventana emergente molesta, lo mostramos limpio en pantalla
-        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'> " + myWallet + " </code><br><a href='https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip' target='_blank' style='color:#00b4d8; display:inline-block; margin-top:8px;'>📥 ¿Ya pagaste? Descarga tu motor aquí</a>";
+        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'>" + myWallet + "</code><br><a href='https://tronscan.org/#/address/TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5' target='_blank' style='color:#00b4d8; display:inline-block; margin-top:8px;'>🔍 Ver billetera en Tronscan</a><br><a href='https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip' target='_blank' style='color:#d4af37; display:inline-block; margin-top:6px;'>📥 Descargar motor</a>";
     }
 }
 </script>
+            }
+        } catch(e) {
+            status.innerText = "Pago cancelado o error en la red.";
+        }
+    } else {
+        // En lugar de una ventana emergente molesta, lo mostramos limpio en pantalla
+        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'> " + 
             </div>
         </div>
 
