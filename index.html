@@ -361,7 +361,35 @@
                     <li>Asynchronous multi-thread processing without UI blocking</li>
                     <li>100% offline & local operation</li>
                 </ul>
-                <a href="https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip" class="btn-main" style="padding: 10px 24px; font-size: 0.85rem;" title="Transfiere 20 USDT a la dirección TRC20: TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5 y descarga">Descargar Motor (20 USDT TRC20)</a>
+                <div id="web3-pay-box" style="text-align: center; margin-top: 15px;">
+    <button id="payBtn" onclick="processWeb3Payment()" class="btn-main" style="padding: 12px 28px; cursor: pointer;">
+        🔒 Pagar 20 USDT y Desbloquear Descarga
+    </button>
+    <div id="payStatus" style="margin-top: 10px; font-size: 0.85rem; color: #d4af37;"></div>
+</div>
+
+<script>
+async function processWeb3Payment() {
+    const status = document.getElementById('payStatus');
+    const myWallet = "TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5";
+    
+    if (window.tronWeb && window.tronWeb.ready) {
+        try {
+            status.innerText = "Procesando pago en red TRON...";
+            let tx = await window.tronWeb.trx.sendTransaction(myWallet, 20000000);
+            if(tx.result) {
+                status.innerText = "¡Pago verificado! Iniciando descarga...";
+                window.location.href = "https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip";
+            }
+        } catch(e) {
+            status.innerText = "Error o cancelación de pago.";
+        }
+    } else {
+        alert("Transfiere 20 USDT a: " + myWallet + " y confirma para continuar.");
+        window.open("https://tronscan.org/#/address/" + myWallet, "_blank");
+    }
+}
+</script>
             </div>
         </div>
 
