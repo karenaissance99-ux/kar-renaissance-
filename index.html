@@ -361,11 +361,11 @@
                     <li>Asynchronous multi-thread processing without UI blocking</li>
                     <li>100% offline & local operation</li>
                 </ul>
-                <div id="web3-pay-box" style="text-align: center; margin-top: 15px;">
-    <button id="payBtn" onclick="processWeb3Payment()" class="btn-main" style="padding: 12px 28px; cursor: pointer;">
-        🔒 Pagar 20 USDT y Desbloquear Descarga
+                  <div id="web3-pay-box" style="text-align: center; margin-top: 15px; background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 8px; border: 1px solid #d4af37;">
+    <button id="payBtn" onclick="processWeb3Payment()" class="btn-main" style="padding: 12px 28px; cursor: pointer; width: 100%;">
+        🔒 Pagar 20 USDT y Descargar
     </button>
-    <div id="payStatus" style="margin-top: 10px; font-size: 0.85rem; color: #d4af37;"></div>
+    <div id="payStatus" style="margin-top: 10px; font-size: 0.85rem; color: #d4af37; line-height: 1.4;"></div>
 </div>
 
 <script>
@@ -382,11 +382,11 @@ async function processWeb3Payment() {
                 window.location.href = "https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip";
             }
         } catch(e) {
-            status.innerText = "Error o cancelación de pago.";
+            status.innerText = "Pago cancelado o error en la red.";
         }
     } else {
-        alert("Transfiere 20 USDT a: " + myWallet + " y confirma para continuar.");
-        window.open("https://tronscan.org/#/address/" + myWallet, "_blank");
+        // En lugar de una ventana emergente molesta, lo mostramos limpio en pantalla
+        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'> " + myWallet + " </code><br><a href='https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip' target='_blank' style='color:#00b4d8; display:inline-block; margin-top:8px;'>📥 ¿Ya pagaste? Descarga tu motor aquí</a>";
     }
 }
 </script>
