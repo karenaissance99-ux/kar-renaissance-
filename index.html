@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.A. RENAISSANCE | Software & Automation</title>
+    <title>K.A. RENAISSANCE | Tridente de Software & Automatización</title>
     <style>
         * {
             margin: 0;
@@ -25,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* Fixed binary rain background (Dark corporate atmosphere) */
         #binaryCanvas {
             position: fixed;
             top: 0;
@@ -114,14 +113,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
-            text-shadow: 0 0 20px rgba(0,0,0,0.9);
         }
 
         .hero-subtitle {
             font-size: 1.1rem;
             color: #a0a5b0;
             margin-bottom: 35px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
         }
 
         .btn-main {
@@ -139,10 +136,50 @@
             transition: all 0.3s;
         }
 
-        .btn-main:hover {
+        .btn-main:hover:not(:disabled) {
             background: #d4af37;
             color: #050608;
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-main:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #00e676;
+            border: 1px solid rgba(0, 230, 118, 0.55);
+            background: rgba(0, 230, 118, 0.08);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .btn-download:hover:not(:disabled) {
+            background: rgba(0, 230, 118, 0.18);
+        }
+
+        .btn-download:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-next {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.45);
+            background: rgba(0, 212, 255, 0.08);
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            cursor: not-allowed;
         }
 
         .section {
@@ -160,11 +197,21 @@
         .section-title {
             font-size: 1.8rem;
             letter-spacing: 2px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             border-left: 4px solid #d4af37;
             padding-left: 15px;
             color: #fff;
+        }
+
+        .promo-banner {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            font-size: 0.92rem;
+            color: #f0e6c2;
         }
 
         .product-card {
@@ -178,7 +225,7 @@
             gap: 30px;
             align-items: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            margin-bottom: 30px;
+            margin-bottom: 36px;
         }
 
         .product-badge {
@@ -225,6 +272,55 @@
             color: #d4af37;
         }
 
+        .action-spacer {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .action-group {
+            margin-top: 18px;
+        }
+
+        .network-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .net-btn {
+            flex: 1;
+            padding: 9px 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: all 0.25s;
+        }
+
+        .net-btn.active {
+            background: rgba(212, 175, 55, 0.22);
+            border-color: #d4af37;
+            color: #fff;
+        }
+
+        .wallet-copy-box {
+            user-select: text !important;
+            -webkit-user-select: text !important;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px dashed rgba(212, 175, 55, 0.45);
+            margin: 8px 0;
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: #fff;
+            word-break: break-all;
+        }
+
         .philosophy-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -262,7 +358,6 @@
             background: rgba(5, 6, 8, 0.95);
         }
 
-        /* --- RESPONSIVE MOBILE ADAPTATIONS --- */
         @media (max-width: 768px) {
             nav {
                 padding: 10px 15px;
@@ -328,148 +423,428 @@
     <nav>
         <div class="nav-logo">K.A. RENAISSANCE</div>
         <ul class="nav-links">
-            <li><a href="#software">Software</a></li>
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="#contact" class="btn-usdt">Licenses (USDT)</a></li>
+            <li><a href="#software">Tridente</a></li>
+            <li><a href="#philosophy">Filosofía</a></li>
+            <li><a href="#contact" class="btn-usdt">Pago Único (USDT)</a></li>
         </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">K.A. RENAISSANCE</h1>
-            <p class="hero-subtitle">Proprietary Software Engineering & Automation Engines</p>
-            <a href="#software" class="btn-main">Explore Solutions</a>
+            <p class="hero-subtitle">Tridente de Software Offline • Pago Único • Cero Mensualidades</p>
+            <a href="#software" class="btn-main">Ver el Tridente</a>
         </div>
     </section>
 
-    <!-- SOFTWARE SECTION -->
     <section class="section" id="software">
-        <h2 class="section-title">Production Software</h2>
-        
-        <!-- Active Main App -->
+        <h2 class="section-title">El Tridente K.A. Renaissance</h2>
+
+        <div id="promoBanner" class="promo-banner"></div>
+
+        <!-- Pieza 1: KAR-MEDIA BATCH ENGINE -->
         <div class="product-card">
             <div style="text-align: center;">
-                <div style="font-size: 4rem; color: #00b4d8;">⚡</div>
-                <span class="product-badge">v2.4.2 ONLINE</span>
+                <div style="font-size: 4rem; color: #00b4d8;">🎬</div>
+                <span class="product-badge">v2.0.1 ONLINE</span>
             </div>
             <div class="product-info">
-                <h3>K.A.R. BATCH ENGINE</h3>
-                <p>Autonomous symbiotic fusion suite. Applies batch watermarks by dynamically adapting opacity and blend modes based on background luminance analysis. Direct license activation via TRC20 (USDT).</p>
+                <h3>KAR-MEDIA BATCH ENGINE</h3>
+                <p>Comprime videos reduciendo peso sin perder calidad visual apreciable para que creadores y editores suban su material a redes sin problemas. Pago único de 20 USDT, sin mensualidades.</p>
                 <ul class="specs-list">
-                    <li>Smart symbiotic blending via pixel-level analysis</li>
-                    <li>Native transparent Alpha channel PNG support</li>
-                    <li>Asynchronous multi-thread processing without UI blocking</li>
-                    <li>100% offline & local operation</li>
+                    <li>Compresión de video por lotes sin pérdida visual apreciable</li>
+                    <li>Pensado para creadores de contenido y editores</li>
+                    <li>Pago único de 20 USDT — 0 mensualidades</li>
                 </ul>
-                  <div id="web3-pay-box" style="text-align: center; margin-top: 15px; background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 8px; border: 1px solid #d4af37;">
-    <button id="payBtn" onclick="processWeb3Payment()" class="btn-main" style="padding: 12px 28px; cursor: pointer; width: 100%;">
-        🔒 Pagar 20 USDT y Descargar
-    </button>
-    <div id="payStatus" style="margin-top: 10px; font-size: 0.85rem; color: #d4af37; line-height: 1.4;"></div>
-</div>
 
-<script>
-async function processWeb3Payment() {
-    const status = document.getElementById('payStatus');
-    const myWallet = "TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5";
-    
-    if (window.tronWeb && window.tronWeb.ready) {
-        try {
-            status.innerText = "Procesando pago en red TRON...";
-            let tx = await window.tronWeb.trx.sendTransaction(myWallet, 20000000);
-            if(tx.result) {
-                status.innerText = "¡Pago verificado! Iniciando descarga...";
-                window.location.href = "https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip";
-            }
-        } catch(e) {
-            status.innerText = "Pago cancelado o error en la red.";
-        }
-    } else {
-        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'>" + myWallet + "</code><br><a href='https://tronscan.org/#/address/TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5' target='_blank' style='color:#00b4d8; display:inline-block; margin-top:8px;'>🔍 Ver billetera en Tronscan</a><br><a href='https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip' target='_blank' style='color:#d4af37; display:inline-block; margin-top:6px;'>📥 Descargar motor</a>";
-    }
-}
-</script>
-            }
-        } catch(e) {
-            status.innerText = "Pago cancelado o error en la red.";
-        }
-    } else {
-        // En lugar de una ventana emergente molesta, lo mostramos limpio en pantalla
-        status.innerHTML = "<strong>Instrucciones de Pago:</strong><br>Transfiere 20 USDT (TRC20) a la dirección:<br><code style='color:#fff; word-break:break-all;'> " + 
+                <div class="action-spacer">
+                    <div id="web3-pay-box" style="text-align: center; background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 8px; border: 1px solid #d4af37;">
+                        <div class="network-selector">
+                            <button type="button" id="btn-trc20" class="net-btn active" onclick="selectNetwork('TRC20')">TRON (TRC20)</button>
+                            <button type="button" id="btn-bep20" class="net-btn" onclick="selectNetwork('BEP20')">BNB Chain (BEP20)</button>
+                        </div>
+                        <button id="payBtn" type="button" onclick="processWeb3Payment()" class="btn-main" style="padding: 12px 24px; cursor: pointer; width: 100%;">
+                            🔒 Pagar 20 USDT (Pago Único)
+                        </button>
+                        <div id="payStatus" style="margin-top: 12px; font-size: 0.85rem; color: #d4af37; line-height: 1.5;"></div>
+                    </div>
+
+                    <div class="action-group" style="text-align: center;">
+                        <a href="https://github.com/karenaissance99-ux/kar-renacimiento-/raw/refs/heads/principal/Motor%20de%20lotes%20KAR-MEDIA%20v2.0.1.zip" target="_blank" rel="noopener" class="btn-download">
+                            📥 Descargar KAR-MEDIA BATCH ENGINE (.ZIP)
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Next App in Development -->
-        <div class="product-card" style="opacity: 0.85;">
+        <!-- Pieza 2: KAR BATCH ENGINE -->
+        <div class="product-card">
             <div style="text-align: center;">
-                <div style="font-size: 4rem; color: #d4af37;">🛠️</div>
-                <span class="product-badge next">UPCOMING RELEASE</span>
+                <div style="font-size: 4rem; color: #d4af37;">🛡️</div>
+                <span id="karBatchBadge" class="product-badge">PROMO ACTIVA</span>
             </div>
             <div class="product-info">
-                <h3>K.A.R. WORKSPACE MINI</h3>
-                <p>Offline productivity utility suite. Local data processing, organization tools, and high-density workflow management.</p>
+                <h3>KAR BATCH ENGINE</h3>
+                <p>Aplica sellos, logos, firmas o cuños por lotes sobre bloques de imágenes para fotógrafos, diseñadores y creadores visuales. Gratis para los primeros 100 compradores de KAR-MEDIA BATCH ENGINE o durante los primeros 15 días; luego pasa a 20 USDT (pago único, sin mensualidades).</p>
                 <ul class="specs-list">
-                    <li>Encrypted local notes and task engine</li>
-                    <li>In-browser asset conversion and compression</li>
-                    <li>Zero data consumption & zero server latency</li>
+                    <li>Sellos y firmas/cuños por lotes sobre bloques de imágenes</li>
+                    <li>Ideal para fotógrafos y diseñadores gráficos</li>
+                    <li id="karBatchPriceRule">Gratis con KAR-MEDIA BATCH ENGINE (primeros 100 o 15 días); luego 20 USDT pago único</li>
                 </ul>
+
+                <div class="action-spacer">
+                    <div id="karBatchActionBox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pieza 3: Próxima herramienta del tridente -->
+        <div class="product-card" style="opacity: 0.92;">
+            <div style="text-align: center;">
+                <div style="font-size: 4rem; color: #00d4ff;">⚙️</div>
+                <span class="product-badge next">PRÓXIMA APP</span>
+            </div>
+            <div class="product-info">
+                <h3>PRÓXIMA HERRAMIENTA DEL TRIDENTE</h3>
+                <p>Tercera utilidad del ecosistema K.A. Renaissance bajo el mismo enfoque: ejecución local, flujo rápido y pago único sin mensualidades.</p>
+                <ul class="specs-list">
+                    <li>Mismo modelo de pago único sin suscripciones</li>
+                    <li>En desarrollo como tercera pieza del tridente</li>
+                    <li>Enfoque offline y sin dependencias innecesarias</li>
+                </ul>
+
+                <div class="action-spacer">
+                    <button type="button" class="btn-next" disabled>
+                        ⏳ Próxima App (En Desarrollo)
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PHILOSOPHY SECTION -->
     <section class="section" id="philosophy">
-        <h2 class="section-title">Our Philosophy</h2>
+        <h2 class="section-title">Filosofía del Tridente</h2>
         <div class="philosophy-grid">
             <div class="philosophy-card">
-                <h4>🔒 Digital Sovereignty</h4>
-                <p>Your data and creative assets belong exclusively to you. Our applications process everything locally on your hardware, eliminating third-party server dependencies.</p>
+                <h4>💳 Pago Único Sin Mensualidades</h4>
+                <p>Pagas una sola vez y conservas la herramienta sin cobros recurrentes ni suscripciones mensuales.</p>
             </div>
             <div class="philosophy-card">
-                <h4>⚡ Absolute Efficiency</h4>
-                <p>Bloatware-free architecture. Code optimized for instant execution with zero unnecessary load times or bandwidth usage.</p>
+                <h4>⏳ Ventana y Cupo Claros</h4>
+                <p>La bonificación de KAR BATCH ENGINE aplica solo a los primeros 100 compradores o durante 15 días; después vuelve a su precio normal de 20 USDT.</p>
             </div>
             <div class="philosophy-card">
-                <h4>🌐 Autonomous Ecosystem</h4>
-                <p>We build decentralized tools engineered to seamlessly integrate into the next-generation digital economy and Web3 infrastructure.</p>
+                <h4>🌐 Descarga Independiente</h4>
+                <p>Archivos alojados en GitHub para que descargarlos no dependa de tener tu teléfono encendido.</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p>&copy; 2026 K.A. RENAISSANCE. All rights reserved. | 100% Autonomous & Proprietary Systems</p>
+        <p>&copy; 2026 K.A. RENAISSANCE. Pago único • Sin mensualidades • Sistemas autónomos.</p>
     </footer>
 
     <script>
-        // SECURITY & ANTI-INSPECTION
+        const PAYMENT_CONFIG = {
+            amountUSDT: 20,
+            karBatchPriceUSDT: 20,
+            promoMaxBuyers: 100,
+            promoDays: 15,
+            launchDateISO: "2026-11-25T05:00:00Z",
+            karMediaDownloadUrl: "https://github.com/karenaissance99-ux/kar-renacimiento-/raw/refs/heads/principal/Motor%20de%20lotes%20KAR-MEDIA%20v2.0.1.zip",
+            karBatchDownloadUrl: "https://github.com/karenaissance99-ux/kar-renacimiento-/releases/download/kar_v1.0/karsymbiotic.engine.zip",
+            networks: {
+                TRC20: {
+                    label: "RED TRON (TRC20)",
+                    wallet: "TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5",
+                    contract: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+                    decimals: 6,
+                    explorer: "https://tronscan.org/#/address/TGp6p4DckJb6jUqzRD1ww8zUvwFucBoU5",
+                    gasNote: "Requiere saldo/energía en TRX para la comisión de red."
+                },
+                BEP20: {
+                    label: "RED BNB SMART CHAIN (BEP20)",
+                    wallet: "0xe2D1B77550Fc6d19C19fcc5E5b7e86bE61a946Cb",
+                    contract: "0x55d398326f99059fF775485246999027B3197955",
+                    decimals: 18,
+                    chainIdHex: "0x38",
+                    explorer: "https://bscscan.com/address/",
+                    gasNote: "Requiere una pequeña fracción de BNB para la comisión de red."
+                }
+            }
+        };
+
+        const STORAGE_KEYS = {
+            buyersCount: "kar_media_buyers_count_v1",
+            purchasedKarMedia: "kar_media_purchased_v1",
+            purchasedKarBatch: "kar_batch_purchased_v1"
+        };
+
+        let selectedNetwork = "TRC20";
+
+        function getBuyersCount() {
+            const raw = localStorage.getItem(STORAGE_KEYS.buyersCount);
+            const num = parseInt(raw || "0", 10);
+            return Number.isNaN(num) ? 0 : Math.min(num, PAYMENT_CONFIG.promoMaxBuyers);
+        }
+
+        function incrementBuyersCount() {
+            const next = Math.min(getBuyersCount() + 1, PAYMENT_CONFIG.promoMaxBuyers);
+            localStorage.setItem(STORAGE_KEYS.buyersCount, String(next));
+            return next;
+        }
+
+        function hasPurchasedKarMedia() {
+            return localStorage.getItem(STORAGE_KEYS.purchasedKarMedia) === "true";
+        }
+
+        function hasPurchasedKarBatch() {
+            return localStorage.getItem(STORAGE_KEYS.purchasedKarBatch) === "true";
+        }
+
+        function isPromoActive() {
+            const buyers = getBuyersCount();
+            const startMs = new Date(PAYMENT_CONFIG.launchDateISO).getTime();
+            const elapsedDays = (Date.now() - startMs) / (1000 * 60 * 60 * 24);
+            return Date.now() >= startMs && buyers < PAYMENT_CONFIG.promoMaxBuyers && elapsedDays <= PAYMENT_CONFIG.promoDays;
+        }
+
+        function getRemainingDays() {
+            const startMs = new Date(PAYMENT_CONFIG.launchDateISO).getTime();
+            if (Date.now() < startMs) {
+                return PAYMENT_CONFIG.promoDays;
+            }
+            const endMs = startMs + PAYMENT_CONFIG.promoDays * 24 * 60 * 60 * 1000;
+            const diffDays = Math.ceil((endMs - Date.now()) / (1000 * 60 * 60 * 24));
+            return Math.max(0, diffDays);
+        }
+
+        function renderPromoAndKarBatchUI() {
+            const startMs = new Date(PAYMENT_CONFIG.launchDateISO).getTime();
+            const notStartedYet = Date.now() < startMs;
+            const promoActive = isPromoActive();
+            const buyers = getBuyersCount();
+            const remainingSlots = Math.max(0, PAYMENT_CONFIG.promoMaxBuyers - buyers);
+            const remainingDays = getRemainingDays();
+            const unlockedFree = promoActive && hasPurchasedKarMedia();
+            const paidKarBatch = hasPurchasedKarBatch();
+
+            const banner = document.getElementById("promoBanner");
+            const badge = document.getElementById("karBatchBadge");
+            const actionBox = document.getElementById("karBatchActionBox");
+
+            if (promoActive || notStartedYet) {
+                const startNotice = notStartedYet
+                    ? "Arranca mañana 25 de noviembre a las 00:00 (hora de Cuba). "
+                    : "";
+                banner.innerHTML =
+                    `🔥 <strong>LANZAMIENTO:</strong> ${startNotice}Quienes compren <strong>KAR-MEDIA BATCH ENGINE</strong> (20 USDT, pago único, sin mensualidades) se llevan <strong>KAR BATCH ENGINE gratis</strong> si les sirve para sellos o firmas en lotes de imágenes. ` +
+                    `Cupo promo: <strong>${remainingSlots}/${PAYMENT_CONFIG.promoMaxBuyers}</strong> • Duración: <strong>${remainingDays} día(s)</strong> (15 días). Cumplido cualquiera de los dos límites, <strong>KAR BATCH ENGINE</strong> vuelve a costar <strong>20 USDT</strong>.`;
+                badge.className = "product-badge";
+                badge.innerText = `GRATIS CON KAR-MEDIA (${remainingSlots} cupos)`;
+            } else {
+                banner.innerHTML =
+                    `📌 <strong>PROMO FINALIZADA:</strong> Se cumplieron los 100 cupos o los 15 días de lanzamiento. <strong>KAR BATCH ENGINE</strong> está en su precio regular de <strong>20 USDT (pago único, sin mensualidades)</strong>.`;
+                badge.className = "product-badge next";
+                badge.innerText = "20 USDT • PAGO ÚNICO";
+            }
+
+            if (unlockedFree) {
+                actionBox.innerHTML =
+                    `<div style="color:#00e676; font-size:0.88rem; margin-bottom:12px;">✅ Desbloqueado gratis por tu compra de KAR-MEDIA BATCH ENGINE dentro de la promo.</div>` +
+                    `<a href="${PAYMENT_CONFIG.karBatchDownloadUrl}" target="_blank" rel="noopener" class="btn-download">📥 Descargar KAR BATCH ENGINE Gratis (.ZIP)</a>`;
+            } else if (paidKarBatch) {
+                actionBox.innerHTML =
+                    `<div style="color:#00e676; font-size:0.88rem; margin-bottom:12px;">✅ Pago único de 20 USDT confirmado para KAR BATCH ENGINE.</div>` +
+                    `<a href="${PAYMENT_CONFIG.karBatchDownloadUrl}" target="_blank" rel="noopener" class="btn-download">📥 Descargar KAR BATCH ENGINE (.ZIP)</a>`;
+            } else if (promoActive || notStartedYet) {
+                actionBox.innerHTML =
+                    `<div style="color:#cccccc; font-size:0.88rem; margin-bottom:10px;">Disponible gratis solo al completar la compra de <strong>KAR-MEDIA BATCH ENGINE</strong> antes de que se agoten los 100 cupos o los 15 días.</div>` +
+                    `<button type="button" class="btn-download" disabled>🔒 Gratis al comprar KAR-MEDIA BATCH ENGINE</button>`;
+            } else {
+                const cfg = PAYMENT_CONFIG.networks[selectedNetwork];
+                const explorerLink = selectedNetwork === "BEP20" ? (cfg.explorer + cfg.wallet) : cfg.explorer;
+                actionBox.innerHTML =
+                    `<div style="background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 8px; border: 1px solid #d4af37; text-align:center;">` +
+                    `<strong>KAR BATCH ENGINE — 20 USDT (Pago Único, Sin Mensualidades)</strong><br>` +
+                    `<div class="wallet-copy-box">${cfg.wallet}</div>` +
+                    `<button type="button" onclick="copyWallet('${cfg.wallet}', 'copyKarBatchFeedback')" style="background:rgba(212,175,55,0.15); border:1px solid #d4af37; color:#d4af37; padding:4px 12px; border-radius:4px; cursor:pointer; font-size:0.78rem; margin-bottom:6px;">📋 Copiar dirección (${selectedNetwork})</button>` +
+                    `<div id="copyKarBatchFeedback" style="font-size:0.75rem; color:#00e676;"></div>` +
+                    `<div style="margin-top:10px;">` +
+                    `<a href="${explorerLink}" target="_blank" rel="noopener" style="color:#00b4d8; margin-right:12px; font-size:0.82rem;">🔍 Explorador</a>` +
+                    `<button type="button" onclick="confirmKarBatchPaid()" class="btn-download" style="padding:8px 16px; font-size:0.8rem;">✅ Ya envié los 20 USDT — Habilitar Descarga</button>` +
+                    `</div></div>`;
+            }
+        }
+
+        function confirmKarBatchPaid() {
+            localStorage.setItem(STORAGE_KEYS.purchasedKarBatch, "true");
+            renderPromoAndKarBatchUI();
+        }
+
+        function selectNetwork(net) {
+            selectedNetwork = net;
+            document.getElementById("btn-trc20").classList.toggle("active", net === "TRC20");
+            document.getElementById("btn-bep20").classList.toggle("active", net === "BEP20");
+            document.getElementById("payStatus").innerHTML = "";
+            renderPromoAndKarBatchUI();
+        }
+
+        function copyWallet(address, feedbackId = "copyFeedback") {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(address).then(() => {
+                    const msg = document.getElementById(feedbackId);
+                    if (msg) msg.innerText = "✅ Dirección copiada";
+                });
+            }
+        }
+
+        function renderManualInstructions(netKey, reasonText = "") {
+            const status = document.getElementById("payStatus");
+            const cfg = PAYMENT_CONFIG.networks[netKey];
+            const explorerLink = netKey === "BEP20" ? (cfg.explorer + cfg.wallet) : cfg.explorer;
+
+            status.innerHTML =
+                (reasonText ? `<div style="color:#cccccc; margin-bottom:6px;">${reasonText}</div>` : "") +
+                `<strong>Pago Único (Sin Mensualidades) — ${cfg.label}:</strong><br>` +
+                `Envía exactamente <strong>${PAYMENT_CONFIG.amountUSDT} USDT</strong> a:<br>` +
+                `<div class="wallet-copy-box">${cfg.wallet}</div>` +
+                `<button type="button" onclick="copyWallet('${cfg.wallet}', 'copyFeedback')" style="background:rgba(212,175,55,0.15); border:1px solid #d4af37; color:#d4af37; padding:4px 12px; border-radius:4px; cursor:pointer; font-size:0.78rem; margin-bottom:6px;">📋 Copiar dirección</button>` +
+                `<div id="copyFeedback" style="font-size:0.75rem; color:#00e676;"></div>` +
+                `<div style="font-size:0.78rem; color:#a0a5b0; margin-top:4px;">${cfg.gasNote}</div>` +
+                `<a href="${explorerLink}" target="_blank" rel="noopener" style="color:#00b4d8; display:inline-block; margin-top:8px; margin-right:12px;">🔍 Verificar en explorador</a>` +
+                `<button type="button" onclick="markKarMediaCompleted()" style="background:rgba(0,230,118,0.12); border:1px solid #00e676; color:#00e676; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.78rem; margin-top:8px;">✅ Ya pagué — Ver descarga y bono</button>`;
+        }
+
+        function markKarMediaCompleted(txRef = "") {
+            const wasPromo = isPromoActive();
+            if (!hasPurchasedKarMedia()) {
+                localStorage.setItem(STORAGE_KEYS.purchasedKarMedia, "true");
+                if (wasPromo) {
+                    incrementBuyersCount();
+                }
+            }
+            renderPromoAndKarBatchUI();
+            const status = document.getElementById("payStatus");
+            const bonusText = wasPromo
+                ? `<br><span style="color:#00e676;">🎁 ¡KAR BATCH ENGINE gratis habilitado en su tarjeta!</span>`
+                : `<br><span style="color:#a0a5b0;">(Fuera de la promo de 100 cupos / 15 días; KAR BATCH ENGINE cuesta 20 USDT).</span>`;
+
+            status.innerHTML =
+                `✅ <strong>KAR-MEDIA BATCH ENGINE</strong> listo para descargar (pago único, sin mensualidades).` +
+                (txRef ? `<br>TX: <code style="color:#fff; word-break:break-all;">${txRef}</code>` : "") +
+                bonusText +
+                `<br><a href="${PAYMENT_CONFIG.karMediaDownloadUrl}" target="_blank" rel="noopener" style="color:#00e676; display:inline-block; margin-top:8px;">📥 Descargar KAR-MEDIA BATCH ENGINE</a>`;
+        }
+
+        async function processWeb3Payment() {
+            const status = document.getElementById("payStatus");
+            const payBtn = document.getElementById("payBtn");
+            const cfg = PAYMENT_CONFIG.networks[selectedNetwork];
+
+            payBtn.disabled = true;
+
+            try {
+                if (selectedNetwork === "TRC20") {
+                    const hasTronWeb = Boolean(
+                        window.tronWeb &&
+                        window.tronWeb.ready &&
+                        window.tronWeb.defaultAddress &&
+                        window.tronWeb.defaultAddress.base58
+                    );
+
+                    if (!hasTronWeb) {
+                        renderManualInstructions("TRC20", "Transfiere manualmente desde tu billetera (funciona aunque estés desconectado):");
+                        return;
+                    }
+
+                    status.innerText = "Confirmando pago único de 20 USDT (TRC20) en tu billetera...";
+                    const rawAmount = String(PAYMENT_CONFIG.amountUSDT * Math.pow(10, cfg.decimals));
+                    const contract = await window.tronWeb.contract().at(cfg.contract);
+                    const txId = await contract.transfer(cfg.wallet, rawAmount).send({ feeLimit: 40000000 });
+
+                    if (txId) {
+                        markKarMediaCompleted(txId);
+                        window.open(PAYMENT_CONFIG.karMediaDownloadUrl, "_blank", "noopener");
+                    } else {
+                        renderManualInstructions("TRC20", "No se recibió confirmación de la transacción.");
+                    }
+                } else if (selectedNetwork === "BEP20") {
+                    if (!window.ethereum) {
+                        renderManualInstructions("BEP20", "Transfiere manualmente desde tu billetera (funciona aunque estés desconectado):");
+                        return;
+                    }
+
+                    status.innerText = "Conectando billetera en BNB Smart Chain (BEP20)...";
+                    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+                    const sender = accounts[0];
+
+                    try {
+                        await window.ethereum.request({
+                            method: "wallet_switchEthereumChain",
+                            params: [{ chainId: cfg.chainIdHex }]
+                        });
+                    } catch (switchErr) {
+                        renderManualInstructions("BEP20", "Selecciona la red BNB Smart Chain (BEP20) en tu billetera.");
+                        return;
+                    }
+
+                    const amountWei = (BigInt(PAYMENT_CONFIG.amountUSDT) * (10n ** 18n)).toString(16).padStart(64, "0");
+                    const cleanTo = cfg.wallet.toLowerCase().replace("0x", "").padStart(64, "0");
+                    const txData = "0xa9059cbb" + cleanTo + amountWei;
+
+                    status.innerText = "Firma el pago único de 20 USDT (BEP20) en tu billetera...";
+                    const txHash = await window.ethereum.request({
+                        method: "eth_sendTransaction",
+                        params: [{
+                            from: sender,
+                            to: cfg.contract,
+                            data: txData
+                        }]
+                    });
+
+                    if (txHash) {
+                        markKarMediaCompleted(txHash);
+                        window.open(PAYMENT_CONFIG.karMediaDownloadUrl, "_blank", "noopener");
+                    }
+                }
+            } catch (err) {
+                renderManualInstructions(selectedNetwork, "Transacción cancelada o no completada.");
+            } finally {
+                payBtn.disabled = false;
+            }
+        }
+
+        renderPromoAndKarBatchUI();
+
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('dragstart', e => e.preventDefault());
         document.addEventListener('keydown', e => {
             if (
-                e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) || 
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) ||
                 (e.ctrlKey && e.key.toUpperCase() === 'U')
             ) {
                 e.preventDefault();
             }
         });
 
-        // BACKGROUND BINARY RAIN
         const binCanvas = document.getElementById('binaryCanvas');
         const binCtx = binCanvas.getContext('2d');
+        const chars = '01';
+        const fontSize = 16;
+        let columns = 0;
+        let drops = [];
 
         function resizeBinCanvas() {
             binCanvas.width = window.innerWidth;
             binCanvas.height = window.innerHeight;
+            columns = Math.floor(binCanvas.width / fontSize);
+            drops = Array(columns).fill(1);
         }
         resizeBinCanvas();
-
         window.addEventListener('resize', resizeBinCanvas);
-
-        const chars = '01';
-        const fontSize = 16;
-        let columns = Math.floor(binCanvas.width / fontSize);
-        let drops = Array(columns).fill(1);
 
         function drawBinary() {
             binCtx.fillStyle = 'rgba(5, 6, 8, 0.12)';
@@ -490,4 +865,4 @@ async function processWeb3Payment() {
         setInterval(drawBinary, 50);
     </script>
 </body>
-    </html>
+</html>
